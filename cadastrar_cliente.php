@@ -62,10 +62,12 @@ if (count($_POST) > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro do cliente</title>
+    <link rel="stylesheet" href="cadastrar_cliente.css">
 </head>
 
 <body>
-    <a href="/clientes.php">Voltar para lista! </a>
+    <h1>Cadastro de cliente! </h1>
+    <a class="voltar_listas" href="/CRUD/clientes.php">Voltar para lista! </a>
     <form method="POST" action="">
         <label for="nome">Nome: </label> <br>
         <input value="<?php if (isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text"> <br><br>
@@ -80,6 +82,7 @@ if (count($_POST) > 0) {
         <input value="<?php if (isset($_POST['tele'])) echo $_POST['tele'] ?>" placeholder="(11) 11111-1111" name="tele" type="text"> <br><br>
 
         <input type="submit" value="Cadastrar !">
+        <input type="reset" value="Limpar !">
     </form>
 </body>
 

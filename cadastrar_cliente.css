@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+.voltar_listas {
+    color: green;
+}
+
+form {
+    margin-top: 20px;
+    border: 1px solid white;
+    width: min-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+}

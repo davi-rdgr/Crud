@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+.edit a,
+.voltar_cadastro {
+    color: green;
+}
+
+.remove a {
+    color: red;
+}
+
+
+
