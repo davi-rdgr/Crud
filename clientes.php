@@ -12,12 +12,13 @@ $num_clientes = $query_clientes->num_rows;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de clientes</title>
-    <link rel="stylesheet" href="clientes.css">
+    <link rel="stylesheet" href="style/clientes.css">
 </head>
 
 <body>
     <h1>Lista de clientes!</h1>
-    <a class="voltar_cadastro" href="cadastrar_cliente.php">Voltar para o cadastro!</a>
+    <a class="voltar_cadastro" href="cadastrar_cliente.php">Voltar para o cadastro!</a> <br><br>
+    <a class="voltar_cadastro" href="editar_cliente.php">Ir para atualização de cliente!</a>
     <h2>Clientes cadastrados no seu sistema: </h2>
 
     <table style="border: 1px solid black;" cellpadding="10">
