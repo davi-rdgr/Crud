@@ -2,6 +2,7 @@
 
 include('conexao.php');
 
+
 // função para limpar caracteres que não sejam números
 function limpar_numeros($str)
 {

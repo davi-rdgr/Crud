@@ -1,8 +1,6 @@
 <?php
 
 include('conexao.php');
-
-
 // função para limpar caracteres que não sejam números
 function limpar_numeros($str)
 {
@@ -64,8 +62,6 @@ if (count($_POST) > 0) {
 $sql_cliente = "SELECT * FROM cliente WHERE id = '$id'";
 $query_cliente = $mysqli->query($sql_cliente) or die($mysqli->error);
 $cliente = $query_cliente->fetch_assoc();
-
-
 ?>
 
 <!DOCTYPE html>
