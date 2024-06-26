@@ -7,23 +7,66 @@ body {
     background-color: rgb(24, 24, 24);
     color: #ffffff;
     font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.errospam {
+    margin-top: 5px;
 }
 
 .voltar_listas {
     color: green;
+    text-decoration: underline;
 }
 
 form {
     margin-top: 20px;
     border: 1px solid white;
+    border-radius: 5px;
     width: min-content;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 input {
     width: 200px;
     height: 40px;
+    font-size: 15px;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.input_submit {
+    background-color: darkslateblue;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.input_reset {
+    background-color: darkslateblue;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 17px;
 }

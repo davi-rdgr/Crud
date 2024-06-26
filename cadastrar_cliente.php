@@ -7,6 +7,7 @@ function limpar_numeros($str)
 }
 //iniciando a variavel erro para explanar na tela caso ocorra
 $erro = false;
+$efetivado = false;
 
 //recebendo os valores
 if (count($_POST) > 0) {
@@ -40,15 +41,12 @@ if (count($_POST) > 0) {
     }
 
     // spam para avisar de determinado erro: 
-    if ($erro) {
-        echo "<p><b> ERRO: $erro </b></p>";
-    } else {
+    if (!$erro) {
 
         //insersão dos dados tratados no banco: 
         $sql_code = "INSERT INTO cliente (nome, email, nascimento, telefone, data_cadastro) VALUES ('$nome', '$email', '$nasc', '$tele', NOW())";
         $efetivado = $mysqli->query($sql_code) or die($mysqli->error);
         if ($efetivado) {
-            echo "Cliente cadastrado com sucesso !";
             unset($_POST);
         }
     }
@@ -66,24 +64,33 @@ if (count($_POST) > 0) {
 </head>
 
 <body>
-    <h1>Cadastro de cliente! </h1>
-    <a class="voltar_listas" href="/CRUD/clientes.php">Voltar para lista! </a>
-    <form method="POST" action="">
-        <label for="nome">Nome: </label> <br>
-        <input value="<?php if (isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text"> <br><br>
+    <main>
+        <h1>Cadastro de cliente! </h1>
+        <a class="voltar_listas" href="/CRUD/clientes.php">Ver os clientes na lista</a>
+        <div class="errospam">
+            <?php
+            if ($erro) echo $erro;
+            if ($efetivado) echo "<div class='sucesso'>Cliente cadastrado com sucesso</div>";
+            ?>
+        </div>
+        <form method="POST" action="">
+            <label for="nome">Nome </label> <br>
+            <input value="<?php if (isset($_POST['nome'])) echo $_POST['nome'] ?>" name="nome" type="text"> <br><br>
 
-        <label for="email">Email: </label> <br>
-        <input value="<?php if (isset($_POST['email'])) echo $_POST['email'] ?>" name="email" type="email"> <br><br>
+            <label for="email">Email </label> <br>
+            <input value="<?php if (isset($_POST['email'])) echo $_POST['email'] ?>" name="email" type="email"> <br><br>
 
-        <label for="nasc">Nascimento: </label> <br>
-        <input value="<?php if (isset($_POST['nasc'])) echo $_POST['nasc'] ?>" name="nasc" type="date"> <br><br>
+            <label for="nasc">Nascimento </label> <br>
+            <input value="<?php if (isset($_POST['nasc'])) echo $_POST['nasc'] ?>" name="nasc" type="date"> <br><br>
 
-        <label for="tele">Telefone: </label> <br>
-        <input value="<?php if (isset($_POST['tele'])) echo $_POST['tele'] ?>" placeholder="(11) 11111-1111" name="tele" type="text"> <br><br>
+            <label for="tele">Telefone </label> <br>
+            <input value="<?php if (isset($_POST['tele'])) echo $_POST['tele'] ?>" placeholder="(11) 11111-1111" name="tele" type="text"> <br><br>
 
-        <input type="submit" value="Cadastrar !">
-        <input type="reset" value="Limpar !">
-    </form>
+            <input class="input_submit" type="submit" value="Cadastrar">
+            <input class="input_reset" type="reset" value="Limpar">
+
+        </form>
+    </main>
 </body>
 
 </html>
